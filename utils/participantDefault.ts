@@ -37,9 +37,7 @@ export const participantDefault: Participant = {
   competence: "",
   hasAccelerationProgram: "",
   programName: "",
-  salesLevel: {
-    firstYear: "",
-    secondYear: "",
-    thirdYear: "",
-  },
+  firstYear: "",
+  secondYear: "",
+  thirdYear: "",
 };

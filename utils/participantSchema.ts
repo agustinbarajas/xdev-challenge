@@ -12,15 +12,18 @@ export const participantSchema = object({
   password: string()
     .trim()
     .max(8, "Password must be 8 characters")
-    .matches(passwordRegexp)
+    .matches(
+      passwordRegexp,
+      "Password must have one uppercase letter, one lowercase letter, one number and a length of 8 characters"
+    )
     .required("Password is required"),
   telephone: string()
-    .max(10, "Password must be 10 characters")
-    .matches(/[0-9]/)
+    .max(10, "Telephone must be 10 characters")
+    .matches(/[0-9]/, "Telephone must have only numbers")
     .required("Telephone is required"),
   cellphone: string()
-    .max(10, "Password must be 10 characters")
-    .matches(/[0-9]/)
+    .max(10, "Cellphone must be 10 characters")
+    .matches(/[0-9]/, "Cellphone must have only numbers")
     .required("Cellphone is required"),
   formAware: string().trim().required("Form aware is required"),
   otherFormAware: string().trim().required("Other form aware is required"),
@@ -38,7 +41,7 @@ export const participantSchema = object({
   businessUrl: string().trim().required("Business url is required"),
   postalCode: string()
     .max(5, "Postal code must be 5 digits")
-    .matches(/[0-9]/)
+    .matches(/[0-9]/, "Postal code must have only numbers")
     .required(),
   streetNumber: string().trim().required("Street number is required"),
   suburb: string().trim().required("Suburb is required"),
@@ -58,9 +61,7 @@ export const participantSchema = object({
     .trim()
     .required("Acceleration program is required"),
   programName: string().trim().required("Program is required"),
-  salesLevel: object({
-    firstYear: string().trim().required("First year is required"),
-    secondYear: string().trim().required("Second year is required"),
-    thirdYear: string().trim().required("Third year is required"),
-  }),
+  firstYear: string().trim().required("First year is required"),
+  secondYear: string().trim().required("Second year is required"),
+  thirdYear: string().trim().required("Third year is required"),
 });
