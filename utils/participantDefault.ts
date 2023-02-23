@@ -1,0 +1,45 @@
+import { participantSchema } from "@/utils/participantSchema";
+import { InferType } from "yup";
+
+export type Participant = InferType<typeof participantSchema>;
+
+export const participantDefault: Participant = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  telephone: "",
+  cellphone: "",
+  formAware: "",
+  otherFormAware: "",
+  position: "",
+  companyName: "",
+  originDate: new Date(),
+  employeesNumber: "Microempresa",
+  menNumber: 0,
+  womenNumber: 0,
+  nonBinaryNumber: 0,
+  geographyIntervention: "",
+  businessName: "",
+  businessUrl: "",
+  postalCode: "",
+  streetNumber: "",
+  suburb: "",
+  municipalityDelegation: "",
+  city: "",
+  country: "",
+  vision: "",
+  mission: "",
+  customers: "",
+  users: "",
+  allies: "",
+  interestGroups: "",
+  competence: "",
+  hasAccelerationProgram: "",
+  programName: "",
+  salesLevel: {
+    firstYear: "",
+    secondYear: "",
+    thirdYear: "",
+  },
+};
